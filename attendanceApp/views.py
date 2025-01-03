@@ -18,7 +18,6 @@ class AttendanceViewSet(viewsets.ModelViewSet):
     serializer_class = AttendanceSerializer
 
     def create(self, request, *args, **kwargs):
-        # Create attendance record for an employee
         employee_id = request.data.get('employee_id')
         attendance_data = {
             'employeeid': employee_id,
