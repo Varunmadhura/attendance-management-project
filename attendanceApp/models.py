@@ -16,7 +16,7 @@ class Employee(models.Model):
     joiningdate = models.DateField()
     
     def __str__(self):
-        return self.employeename  # Return a string representation of the employee's name
+        return self.employeename 
 
 class Attendance(models.Model):
     STATUS_CHOICES = [
