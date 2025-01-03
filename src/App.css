@@ -1,0 +1,33 @@
+.App {
+  text-align: center;
+  margin: 20px;
+}
+
+form {
+  margin-bottom: 20px;
+}
+
+div {
+  margin-bottom: 10px;
+}
+
+button {
+  padding: 10px;
+  background-color: #4CAF50;
+  color: white;
+  border: none;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: #45a049;
+}
+
+select, input {
+  margin-left: 10px;
+  padding: 5px;
+}
+
+h2 {
+  margin-top: 20px;
+}
