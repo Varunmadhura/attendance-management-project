@@ -8,7 +8,7 @@ const AttendanceFormFormik = () => {
   const [employees, setEmployees] = useState([]);
   const [message, setMessage] = useState("");
 
-  // Fetch list of employees to populate dropdown
+
   useEffect(() => {
     const fetchEmployees = async () => {
       try {
@@ -25,9 +25,9 @@ const AttendanceFormFormik = () => {
   const formik = useFormik({
     initialValues: {
       employee_id: "",
-      attendance_status: "Present", // Default option
-      day_status: "Working", // Default option
-      status: true, // Active by default
+      attendance_status: "Present",
+      day_status: "Working", 
+      status: true, 
       comments: "",
     },
     validationSchema: Yup.object({
