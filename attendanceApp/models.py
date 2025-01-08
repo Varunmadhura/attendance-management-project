@@ -41,7 +41,7 @@ class Attendance(models.Model):
     attendance_status = models.CharField(max_length=10, choices=ATTENDANCE_STATUS_CHOICES)
     day_status = models.CharField(max_length=10, choices=DAY_STATUS_CHOICES)
     status = models.BooleanField(choices=STATUS_CHOICES, default=True)
-    reason = models.TextField(max_length=100, blank=True, null=True)
+    reason = models.CharField(max_length=100, null=True)
     created_at = models.DateTimeField(auto_now_add=True)
 
     def __str__(self):
@@ -49,11 +49,11 @@ class Attendance(models.Model):
     
 class Leaves(models.Model):
     Id = models.AutoField(primary_key=True)
-    employeeId = models.CharField(max_length=15)
+    employeeId = models.ForeignKey(Employee, on_delete=models.CASCADE)
     fromdate = models.DateField()
     todate = models.DateField()
     reason = models.CharField(max_length=1000)
-    discription = models.CharField(max_length=750)
+    description = models.CharField(max_length=750)
     status = models.IntegerField()
 
     # def __str__(self):
