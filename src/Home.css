@@ -1,0 +1,71 @@
+/* Container for the home page */
+.home-container {
+    width: 80%;
+    margin: 30px auto;
+    padding: 20px;
+    background-color: #f9f9f9;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  }
+  
+  /* Title of the Home Page */
+  .home-title {
+    text-align: center;
+    font-size: 2.5rem;
+    color: #333;
+    font-weight: bold;
+    margin-bottom: 20px;
+  }
+  
+  /* Description and Information about the Attendance System */
+  .home-description {
+    font-size: 1.1rem;
+    line-height: 1.6;
+    color: #555;
+  }
+  
+  /* Heading for Features and How It Works */
+  h2 {
+    font-size: 1.8rem;
+    color: #444;
+    margin-top: 20px;
+  }
+  
+  /* List styles for Features and Benefits */
+  ul {
+    list-style-type: none;
+    padding-left: 0;
+  }
+  
+  ul li {
+    padding: 10px 0;
+    font-size: 1.1rem;
+    border-bottom: 1px solid #ddd;
+  }
+  
+  ul li:last-child {
+    border-bottom: none;
+  }
+  
+  /* Style for paragraphs under 'How It Works' */
+  p {
+    font-size: 1.1rem;
+    margin-top: 10px;
+  }
+  
+  /* Styling for the Home page */
+  .home-container p,
+  .home-container ul {
+    font-size: 1rem;
+    line-height: 1.6;
+  }
+  
+  .home-container a {
+    color: #0066cc;
+    text-decoration: none;
+  }
+  
+  .home-container a:hover {
+    text-decoration: underline;
+  }
+  

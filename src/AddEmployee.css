@@ -1,0 +1,117 @@
+
+.container-fluid {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh; 
+  background: linear-gradient(135deg, #74ebd5, #acb6e5);
+  overflow-y: auto;
+  box-sizing: border-box; 
+}
+
+form {
+  width: 100%;
+  max-width: 600px; 
+  background-color: #ffffff;
+  padding: 30px;
+  border-radius: 15px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease-in-out;
+  box-sizing: border-box; 
+}
+
+
+form:hover {
+  transform: translateY(-10px); 
+}
+
+.scrollable-section { 
+  width: 100%; 
+  max-height: 460px; 
+  overflow-y: auto; 
+  border: 1px rounded gray;  
+  padding: 2px; 
+  background-color: #f9f9f9; 
+}
+
+form h2 {
+  text-align: center;
+  margin-bottom: 20px;
+  font-size: 28px;
+  color: #007bff;
+  font-weight: bold;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  border-bottom: 2px solid #007bff;
+  padding-bottom: 10px;
+}
+
+label {
+  display: block;
+  font-weight: bold;
+  margin-bottom: 5px;
+  color: #333;
+}
+
+
+input.form-control {
+  width: 100%;
+  padding: 12px;
+  margin-bottom: 20px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  box-sizing: border-box;
+  font-size: 16px;
+  background-color: #f9f9f9;
+  transition: border-color 0.3s, box-shadow 0.3s;
+}
+
+input.form-control:focus {
+  border-color: #007bff; 
+  outline: none;
+  box-shadow: 0 0 8px rgba(0, 123, 255, 0.5);
+  background-color: #fff;
+}
+
+
+.text-danger {
+  font-size: 14px;
+  margin-top: -10px;
+  margin-bottom: 10px;
+  color: #ff4d4f;
+}
+
+
+button[type="submit"] {
+  width: 100%;
+  padding: 12px;
+  background-color: #007bff;
+  border: none;
+  color: #fff;
+  font-size: 18px;
+  font-weight: bold;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+  box-shadow: 0 5px 15px rgba(0, 123, 255, 0.3);
+}
+
+button[type="submit"]:hover {
+  background-color: #0056b3;
+  transform: translateY(-3px); 
+}
+
+
+@media (max-width: 768px) {
+  form {
+    width: 90%; 
+  }
+
+  form h2 {
+    font-size: 22px;
+  }
+
+  input.form-control {
+    font-size: 14px;
+  }
+}

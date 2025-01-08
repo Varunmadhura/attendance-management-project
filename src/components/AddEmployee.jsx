@@ -2,7 +2,7 @@ import React from "react";
 import axios from "axios";
 import { useFormik } from "formik";
 import * as Yup from "yup";
-import './addemp.css'
+import 'D:/attendance-management-system/attendance-management-project/src/AddEmployee.css';
 export function AddEmployee(){
 
   const addEmployee = async (values, {resetForm}) => {
@@ -53,6 +53,7 @@ export function AddEmployee(){
     <div className="container-fluid">
       <form onSubmit={formik.handleSubmit}>
         <h2>Add Employee Details</h2>
+        <div className="scrollable-section">
         <div>
           <label htmlFor="employeeid">Employee ID</label>
           <div>
@@ -118,6 +119,7 @@ export function AddEmployee(){
         </div>
         <div>
           <button type="submit" className="w-100 mt-2 btn btn-warning">Add</button>
+        </div>
         </div>
       </form>
     </div>

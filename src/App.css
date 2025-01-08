@@ -1,33 +1,106 @@
-.App {
-  text-align: center;
-  margin: 20px;
+/* App.css */
+
+/* Container for the entire application */
+.app-container {
+  padding: 0;
+  margin: 0;
+  font-family: Arial, sans-serif;
 }
 
-form {
-  margin-bottom: 20px;
-}
-
-div {
-  margin-bottom: 10px;
-}
-
-button {
-  padding: 10px;
-  background-color: #4CAF50;
+/* Header section styling */
+.header {
+  width: 100%;
+  background-color: #007bff;
   color: white;
+  text-align: center; /* Centers the "Attendance Management" text */
+  padding: 20px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  position: relative;
+  font-size: 24px;
+  font-weight: bold;
+}
+
+/* Style for the menu button outside of the header */
+.menu-button {
+  position: absolute;
+  top: 15px;
+  left: 15px;
+}
+
+.btn-primary {
+  background-color: #007bff;
   border: none;
+  padding: 10px 15px;
+  font-size: 18px;
+  border-radius: 5px;
+  color: white;
   cursor: pointer;
+  transition: background-color 0.3s ease;
 }
 
-button:hover {
-  background-color: #45a049;
+.btn-primary:hover {
+  background-color: #0056b3;
 }
 
-select, input {
-  margin-left: 10px;
-  padding: 5px;
-}
-
-h2 {
+/* Offcanvas styles */
+.offcanvas-nav {
   margin-top: 20px;
+  padding-left: 10px;
+}
+
+/* Navigation Links */
+.offcanvas-nav a {
+  color: #007bff;
+  padding: 10px;
+  border-radius: 5px;
+  margin-bottom: 5px;
+  transition: all 0.3s ease;
+  font-size: 18px;
+  text-transform: capitalize;
+  display: block;
+  text-decoration: none;
+  background-color: #f8f9fa; /* Light background for a cleaner look */
+  border: 1px solid #ddd;    /* Slight border to distinguish links */
+}
+
+.offcanvas-nav a:hover {
+  background-color: #e9ecef;
+  border-color: #ccc;
+}
+
+/* Active/Focused Link State */
+.offcanvas-nav a:focus, .offcanvas-nav a:active {
+  background-color: #0056b3;
+  color: white;
+}
+
+/* Offcanvas header styling */
+.offcanvas-header h5 {
+  margin: 0;
+  color: #007bff;
+  font-size: 20px;
+  font-weight: bold;
+}
+
+/* General layout and spacing tweaks */
+.header, .offcanvas-nav a {
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1);
+}
+
+/* Responsive fixes for the offcanvas */
+@media (max-width: 768px) {
+  .header {
+    font-size: 20px;
+    padding: 15px;
+  }
+
+  .btn-primary {
+    padding: 8px 12px;
+    font-size: 16px;
+  }
+
+  .offcanvas-nav a {
+    font-size: 16px;
+    padding: 8px;
+  }
 }

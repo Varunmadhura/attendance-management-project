@@ -2,13 +2,13 @@ import React, { useState, useEffect } from "react";
 import { useFormik } from "formik";
 import * as Yup from "yup";
 import axios from "axios";
-import './AttendanceForm.css';
+import "D:/attendance-management-system/attendance-management-project/src/Attendance.css"
+
 
 const AttendanceFormFormik = () => {
   const [employees, setEmployees] = useState([]);
   const [message, setMessage] = useState("");
 
-  // Fetch list of employees to populate dropdown
   useEffect(() => {
     const fetchEmployees = async () => {
       try {
@@ -25,16 +25,22 @@ const AttendanceFormFormik = () => {
   const formik = useFormik({
     initialValues: {
       employee_id: "",
-      attendance_status: "Present", // Default option
-      day_status: "Working", // Default option
-      status: true, // Active by default
+      attendance_status: "Present", 
+      day_status: "Working",
+      status: true, 
       comments: "",
+      reason: "",
     },
     validationSchema: Yup.object({
       employee_id: Yup.string().required("Employee ID is required"),
       attendance_status: Yup.string().required("Please select attendance status"),
       day_status: Yup.string().required("Please select day status"),
       comments: Yup.string().max(100, "Comments must be 100 characters or less"),
+      reason: Yup.string().when('attendance_status', {
+        is: (value) => value === 'Absent' || value === 'Late',
+        then:(schema) =>  schema.required("Reason is required when Absent or Late").max(100, "Reason must be 100 characters or less"),
+        otherwise: (schema) => schema.notRequired(),
+      }),
     }),
     onSubmit: async (values) => {
       console.log("Submitted Values:", values);  
@@ -97,6 +103,23 @@ const AttendanceFormFormik = () => {
             <div className="error">{formik.errors.attendance_status}</div>
           ) : null}
         </div>
+
+        
+        {(formik.values.attendance_status === "Absent" || formik.values.attendance_status === "Late") && (
+          <div className="form-group">
+            <label htmlFor="reason">Reason:</label>
+            <textarea
+              id="reason"
+              name="reason"
+              onChange={formik.handleChange}
+              onBlur={formik.handleBlur}
+              value={formik.values.reason}
+            />
+            {formik.touched.reason && formik.errors.reason ? (
+              <div className="error">{formik.errors.reason}</div>
+            ) : null}
+          </div>
+        )}
 
         <div className="form-group">
           <label htmlFor="day_status">Day Status:</label>
